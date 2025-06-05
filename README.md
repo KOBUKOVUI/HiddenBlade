@@ -1,10 +1,11 @@
-# Password Strength Estimation Using Machine Learning 🔐
+# Hidden Blace
+## Password Generation and Evaluation Tool Based on Machine Learning 🔐🔐🔐
 
 This project leverages **Machine Learning** to estimate the strength of Vietnamese and **English** passwords, helping enhance security by predicting password strength with high accuracy.
 
 ## 🚀 Features:
 
-- **Multi-language Support** (English & Vietnamese -in future-)
+- **Multi-language Support** (English & Vietnamese -in the future-)
 - **Machine Learning Models** (Random Forest, Decision Tree, etc)
 - **Password Strength Estimation** based on features like length, complexity, and dictionary similarity.
 
