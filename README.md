@@ -1,5 +1,5 @@
-# Hidden Blace
-## Password Generation and Evaluation Tool Based on Machine Learning 🔐🔐🔐
+# Hidden Blade
+## Password Generation and Evaluation Tool Based on Machine Learning 🔐
 
 This project leverages **Machine Learning** to estimate the strength of Vietnamese and **English** passwords, helping enhance security by predicting password strength with high accuracy.
 
