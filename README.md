@@ -1,4 +1,4 @@
-📦 Phần I: Thu thập dữ liệu
+## 📦 Phần I: Thu thập dữ liệu
 
 Dữ liệu mật khẩu được tổng hợp từ nhiều nguồn lớn:
 
@@ -39,6 +39,25 @@ Dữ liệu mật khẩu được tổng hợp từ nhiều nguồn lớn:
 - Mật khẩu **fair** và **strong** được xác định kỹ hơn qua entropy.
 
 - Sau oversampling, giữ tập dữ liệu cân bằng với 4 lớp: `weak`, `fair`, `medium`, `strong`.
+  
+  ==================================================
+  
+  📊 Password Strength Label Distribution
+  ==================================================
+  
+  Label                Count      Percentage
+  
+  --------------------------------------------------
+  
+  weak             1,734,734          27.37%
+  medium           1,719,970          27.14%
+  strong           1,535,966          24.24%
+  
+  fair             1,346,700          21.25%
+  ==================================================
+  
+  🔢 Total passwords: 6,337,370
+  ==================================================
 
 ## 🧪 Phần IV: Trích xuất đặc trưng
 
