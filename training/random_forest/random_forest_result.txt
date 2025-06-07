@@ -1,0 +1,24 @@
+=== Confusion Matrix ===
+ [177512      0 142444     44]
+ [  3652 283622   3353  29373]
+ [ 79011      0 240975     14]
+ [  3005 125330   2752 188913] 
+
+=== Classification Report ===
+              precision    recall  f1-score   support
+
+        fair       0.67      0.55      0.61    320000
+      medium       0.69      0.89      0.78    320000
+      strong       0.62      0.75      0.68    320000
+        weak       0.87      0.59      0.70    320000
+
+    accuracy                           0.70   1280000
+   macro avg       0.71      0.70      0.69   1280000
+weighted avg       0.71      0.70      0.69   1280000
+
+
+Accuracy: 0.6961
+
+=> Prediction for new password strength: fair
+=== Overall TPR, FPR, TNR, FNR ===
+TPR: 0.6961 | FPR: 0.1013 | TNR: 0.8987 | FNR: 0.3039

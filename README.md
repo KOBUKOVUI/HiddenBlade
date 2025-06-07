@@ -1,4 +1,5 @@
 # Hidden Blade
+
 ## Password Generation and Evaluation Tool Based on Machine Learning 🔐
 
 This project leverages **Machine Learning** to estimate the strength of Vietnamese and **English** passwords, helping enhance security by predicting password strength with high accuracy.
@@ -17,18 +18,17 @@ This project leverages **Machine Learning** to estimate the strength of Vietname
 ## ⚙️ Installation:
 
 1. Clone the repo:
-  
-  ```bash
-  git clone https://github.com/....
-  ```
-  
+   
+   ```bash
+   git clone https://github.com/....
+   ```
+
 2. Install dependencies:
-  
-  ```bash
-  pip install -r requirements.txt
-  ```
-  
+   
+   ```bash
+   pip install -r requirements.txt
+   ```
+
 3. Run training:
-  
 
 ## 🎯 Future Work:
