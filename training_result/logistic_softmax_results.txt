@@ -1,0 +1,21 @@
+LOGISTIC REGRESSION: SOFTMAX
+=== Confusion Matrix ===
+[[176773    533 142684     10]
+ [  5103 207251   3150 104496]
+ [ 83776      0 236224      0]
+ [  3187  73769   2748 240296]]
+
+=== Classification Report ===
+              precision    recall  f1-score   support
+
+        fair       0.66      0.55      0.60    320000
+      medium       0.74      0.65      0.69    320000
+      strong       0.61      0.74      0.67    320000
+        weak       0.70      0.75      0.72    320000
+
+    accuracy                           0.67   1280000
+   macro avg       0.68      0.67      0.67   1280000
+weighted avg       0.68      0.67      0.67   1280000
+
+
+Accuracy: 0.6723

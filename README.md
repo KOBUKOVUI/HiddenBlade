@@ -94,3 +94,89 @@ Kết quả đánh giá:
   - **FNR**: `0.3039`
 
 🧾 **Nhận xét**: Mô hình thể hiện khả năng phân loại tốt, đặc biệt ở các lớp “medium” và “strong”. Tuy nhiên, nhầm lẫn ở lớp “fair” và “weak” vẫn cần được cải thiện. Có thể áp dụng thêm kỹ thuật như boosting hoặc tuning thêm các đặc trưng để cải thiện độ chính xác.
+
+### 2.1 Logistic regression_OvR
+
+**Nhận xét tổng quan**  
+Mô hình Logistic Regression OvR cho kết quả độ chính xác 60.65% trên 1.28 triệu mẫu, với hiệu năng tốt ở hai thái cực “weak” và “strong” nhưng hạn chế rõ rệt ở hai lớp trung gian “fair” và “medium”. Điều này cho thấy ranh giới giữa các mức “trung bình” chưa được đặc trưng hoá đầy đủ, cần cải thiện feature hoặc chuyển chiến lược softmax để nâng cao chất lượng phân loại.
+
+---
+
+**Nhận xét ngắn gọn**  
+– Mô hình phân biệt tốt hai lớp “strong” (recall = 0.85) và “weak” (recall = 0.77), F1‐score đều 0.68.  
+– Khó khăn ở hai lớp trung gian “fair” (recall = 0.40, F1 = 0.50) và “medium” (recall = 0.41, F1 = 0.51).  
+– Xác suất “fair” dễ bị nhầm thành “strong” và “medium” dễ bị nhầm thành “weak”.
+
+---
+
+**Các thông số chính**
+
+- **Accuracy:** 0.6065
+
+- **Fair:** precision = 0.65 | recall = 0.40 | f1-score = 0.50
+
+- **Medium:** precision = 0.67 | recall = 0.41 | f1-score = 0.51
+
+- **Strong:** precision = 0.56 | recall = 0.85 | f1-score = 0.68
+
+- **Weak:** precision = 0.60 | recall = 0.77 | f1-score = 0.68
+
+- **Macro avg:** precision = 0.62 | recall = 0.61 | f1-score = 0.59
+
+- **Weighted avg:** precision = 0.62 | recall = 0.61 | f1-score = 0.59
+
+### 2.2 Logistic Regression Softmax
+
+Mô hình Softmax đã cải thiện rõ rệt so với OvR, đạt **67.23%** accuracy (tăng gần 6.6 điểm phần trăm). Mọi lớp đều có mức precision, recall và F1‐score đồng đều hơn, cho thấy giải pháp đa lớp (“multinomial”) tối ưu hoá tốt hơn ranh giới giữa các mức độ.
+
+---
+
+**Chi tiết theo lớp**
+
+- **fair**:
+  
+  - Precision = 0.66 (tăng nhẹ)
+  
+  - Recall = 0.55 (tăng từ 0.40 → 0.55)
+  
+  - F1 = 0.60 (tăng từ 0.50 → 0.60)  
+    → Ranh “fair”/“strong” đã rõ hơn, giảm nhầm lẫn sang “strong”.
+
+- **medium**:
+  
+  - Precision = 0.74 (tăng từ 0.67)
+  
+  - Recall = 0.65 (tăng từ 0.41)
+  
+  - F1 = 0.69 (tăng từ 0.51)  
+    → Lớp trung cấp tiếp tục dễ nhận diện hơn, cả sensitivity và specificity đều tăng.
+
+- **strong**:
+  
+  - Precision = 0.61 (tăng từ 0.56)
+  
+  - Recall = 0.74 (giảm từ 0.85)
+  
+  - F1 = 0.67 (giảm nhẹ từ 0.68)  
+    → Ít “false alarms” hơn (precision cao hơn), chấp nhận giảm một chút recall để cân bằng với lớp khác.
+
+- **weak**:
+  
+  - Precision = 0.70 (tăng từ 0.60)
+  
+  - Recall = 0.75 (giảm nhẹ từ 0.77)
+  
+  - F1 = 0.72 (tăng từ 0.68)  
+    → Dự đoán “weak” chính xác và bao phủ tốt, F1 cải thiện.
+
+---
+
+**Các chỉ số tổng thể**
+
+- **Accuracy:** 0.6723
+
+- **Macro avg:** precision = 0.68 | recall = 0.67 | F1 = 0.67
+
+- **Weighted avg:** precision = 0.68 | recall = 0.67 | F1 = 0.67
+
+--- 
