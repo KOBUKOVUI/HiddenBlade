@@ -1,0 +1,29 @@
+=== Features Used (ordered) ===
+entropy, length, count_lower, ratio_lower, count_upper, ratio_upper, count_digits, ratio_digits, count_special_chars, ratio_special_chars, char_diversity, common_phrase
+
+=== Classes ===
+fair, medium, strong, weak
+
+=== Confusion Matrix ===
+[[200779      0 119182     39]
+ [  4186 260005   2820  52989]
+ [100615      0 219364     21]
+ [  3418 103239   2354 210989]]
+
+=== Classification Report ===
+              precision    recall  f1-score   support
+
+        fair       0.65      0.63      0.64    320000
+      medium       0.72      0.81      0.76    320000
+      strong       0.64      0.69      0.66    320000
+        weak       0.80      0.66      0.72    320000
+
+    accuracy                           0.70   1280000
+   macro avg       0.70      0.70      0.70   1280000
+weighted avg       0.70      0.70      0.70   1280000
+
+Accuracy: 0.6962
+Training time (s): 1684.44
+
+=== Overall TPR, FPR, TNR, FNR ===
+TPR: 0.6962 | FPR: 0.1013 | TNR: 0.8987 | FNR: 0.3038
