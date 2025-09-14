@@ -129,7 +129,6 @@ Mô hình Logistic Regression OvR cho kết quả độ chính xác 60.65% trên
 
 Mô hình Softmax đã cải thiện rõ rệt so với OvR, đạt **67.23%** accuracy (tăng gần 6.6 điểm phần trăm). Mọi lớp đều có mức precision, recall và F1‐score đồng đều hơn, cho thấy giải pháp đa lớp (“multinomial”) tối ưu hoá tốt hơn ranh giới giữa các mức độ.
 
----
 
 **Chi tiết theo lớp**
 
@@ -169,7 +168,6 @@ Mô hình Softmax đã cải thiện rõ rệt so với OvR, đạt **67.23%** a
   - F1 = 0.72 (tăng từ 0.68)  
     → Dự đoán “weak” chính xác và bao phủ tốt, F1 cải thiện.
 
----
 
 **Các chỉ số tổng thể**
 
@@ -267,8 +265,7 @@ Cân bằng dữ liệu hoặc sử dụng class_weight="balanced" trong SVM.
 
 So sánh với các thuật toán boosting (XGBoost, LightGBM) để xem sự khác biệt.
 
-
-
+---
 ### 4 Gradient boost
 
 Model Evaluation Report (Gradient Boosting)
@@ -348,6 +345,8 @@ Tăng cân bằng dữ liệu (class rebalancing / oversampling / focal loss).
 
 Thử các thuật toán boosting khác như XGBoost / LightGBM / CatBoost để so sánh.
 
+
+---
 ### 5 MLP 
 Model Evaluation Report (MLP Classifier)
 Dataset & Setup
