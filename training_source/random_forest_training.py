@@ -73,6 +73,7 @@ def random_forest(input_training_file, input_validation_file):
     # Write results to file
     with open('...', 'w', encoding='utf-8') as f: # change result output in txt
         f.write("=== Confusion Matrix ===\n")
+        f.write("fair - medium - strong - weak\n")
         cm = confusion_matrix(y_val, y_pred)
         f.write(str(cm) + "\n\n")
         f.write("=== Classification Report ===\n")
@@ -102,6 +103,7 @@ def random_forest(input_training_file, input_validation_file):
 
     # Print to console
     print("=== Confusion Matrix ===")
+    print("fair - medium - strong - weak\n")
     print(cm)
     print("\n=== Classification Report ===")
     print(classification_report(y_val, y_pred, target_names=label_encoder.classes_))

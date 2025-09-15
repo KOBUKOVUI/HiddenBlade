@@ -1,5 +1,6 @@
 LOGISTIC REGRESSION: OvR
 === Confusion Matrix ===
+fair - medium - strong - weak
 [[129575    248 190177      0]
  [ 15761 130836  12192 161211]
  [ 49020    514 270466      0]

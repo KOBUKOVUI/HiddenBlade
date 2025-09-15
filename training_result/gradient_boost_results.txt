@@ -5,6 +5,7 @@ entropy, length, count_lower, ratio_lower, count_upper, ratio_upper, count_digit
 fair, medium, strong, weak
 
 === Confusion Matrix ===
+fair - medium - strong - weak
 [[197249      0 122748      3]
  [  4157 283265   2848  29730]
  [ 96623      0 223376      1]

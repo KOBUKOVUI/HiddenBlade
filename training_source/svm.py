@@ -52,6 +52,7 @@ def svm_classification(input_training_file, input_validation_file):
 
     with open('change\to\your\output_result_path.txt', 'w', encoding='utf-8') as f: # change to your output path here
         f.write("=== Confusion Matrix ===\n")
+        f.write("fair - medium - strong - weak\n")
         f.write(str(cm) + "\n\n")
         f.write("=== Classification Report ===\n")
         f.write(report + "\n")
@@ -59,6 +60,7 @@ def svm_classification(input_training_file, input_validation_file):
         f.write("=== Overall TPR, FPR, TNR, FNR ===\n")
         f.write(f"TPR: {TPR:.4f} | FPR: {FPR:.4f} | TNR: {TNR:.4f} | FNR: {FNR:.4f}\n")
 
+    
     print("\n=== Confusion Matrix ===\n", cm)
     print("\n=== Classification Report ===\n", report)
     print(f"\nAccuracy: {accuracy:.4f}")

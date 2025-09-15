@@ -95,6 +95,7 @@ def mlp_classification(input_training_file, input_validation_file, out_put_txt =
         f.write("=== Classes ===\n")
         f.write(", ".join(classes) + "\n\n")
         f.write("=== Confusion Matrix ===\n")
+        f.write("fair - medium - strong - weak\n")
         f.write(str(cm) + "\n\n")
         f.write("=== Classification Report ===\n")
         f.write(report + "\n")
@@ -105,6 +106,7 @@ def mlp_classification(input_training_file, input_validation_file, out_put_txt =
 
 
     # Console summary
+    f.write("fair - medium - strong - weak\n")
     print("\n=== Confusion Matrix ===\n", cm)
     print("\n=== Classification Report ===\n", report)
     print(f"\nAccuracy: {accuracy:.4f}")

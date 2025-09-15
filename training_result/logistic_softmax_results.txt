@@ -1,5 +1,6 @@
 LOGISTIC REGRESSION: SOFTMAX
 === Confusion Matrix ===
+fair - medium - strong - weak
 [[176773    533 142684     10]
  [  5103 207251   3150 104496]
  [ 83776      0 236224      0]

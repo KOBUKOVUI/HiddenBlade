@@ -82,6 +82,7 @@ def logistic_regression_OvR(input_training_file, input_validation_file):
 
     # Print to console
     print("=== Confusion Matrix ===")
+    print("fair - medium - strong - weak\n")
     print(cm)
     print("\n=== Classification Report ===")
     print(classification_report(y_val, y_pred, target_names=label_encoder.classes_))

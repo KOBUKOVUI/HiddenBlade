@@ -1,4 +1,5 @@
 === Confusion Matrix ===
+fair - medium - strong - weak
  [177512      0 142444     44]
  [  3652 283622   3353  29373]
  [ 79011      0 240975     14]
