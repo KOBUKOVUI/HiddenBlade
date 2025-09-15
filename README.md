@@ -255,15 +255,6 @@ SVM cho kết quả tệ hơn Gradient Boosting (60% vs ~70% accuracy).
 
 Sự nhầm lẫn chủ yếu giữa fair ↔ strong và medium ↔ weak.
 
-Hướng cải thiện:
-
-Thử kernel phi tuyến (RBF, polynomial) thay vì Linear SVM.
-
-Điều chỉnh C và tăng max_iter để hội tụ tốt hơn.
-
-Cân bằng dữ liệu hoặc sử dụng class_weight="balanced" trong SVM.
-
-So sánh với các thuật toán boosting (XGBoost, LightGBM) để xem sự khác biệt.
 
 ---
 ### 4 Gradient boost
@@ -336,15 +327,6 @@ Khả năng phân biệt giữa positive/negative tương đối tốt (TNR ~90%
 📌 Kết luận & Hướng cải thiện
 
 Model hoạt động khá ổn định, accuracy gần 70%, nhưng vẫn có nhiều nhầm lẫn giữa các lớp fair ↔ strong và weak ↔ medium.
-
-Có thể cải thiện bằng cách:
-
-Tăng cân bằng dữ liệu (class rebalancing / oversampling / focal loss).
-
-Điều chỉnh hyperparameter cho Gradient Boosting (learning rate, max depth, n_estimators).
-
-Thử các thuật toán boosting khác như XGBoost / LightGBM / CatBoost để so sánh.
-
 
 ---
 ### 5 MLP 
@@ -428,10 +410,97 @@ MLP cho kết quả tương đương Gradient Boosting (~70% accuracy) và tốt
 
 Điểm yếu: nhiều nhầm lẫn giữa fair ↔ strong và weak ↔ medium.
 
-Có thể cải thiện bằng:
 
-Thêm regularization (dropout, batch norm) để tránh overfitting.
+### LSTM 
+Dataset & Setup
 
-Thử kiến trúc sâu hơn hoặc thay đổi số neurons mỗi layer.
+Tổng số mẫu: 1,280,000
 
-So sánh thêm với các thuật toán boosting (XGBoost, LightGBM) để tìm trade-off tốc độ vs độ chính xác.
+Các lớp (classes): fair, medium, strong, weak
+
+Đầu vào (input): password (char-level)
+
+Thuật toán: Bidirectional LSTM với Embedding layer
+
+Cấu hình huấn luyện:
+
+Embedding dim = 128
+
+LSTM units = 128 (BiLSTM)
+
+Dropout: 0.4 + 0.3
+
+Epochs = 10
+
+Batch size = 1024
+
+✅ Kết quả tổng quan
+
+Accuracy (Độ chính xác): 85.92%
+
+Macro Average (trung bình trên tất cả lớp):
+
+Precision: 0.861
+
+Recall: 0.859
+
+F1-score: 0.859
+
+🔎 Classification Report chi tiết
+Class	Precision	Recall	F1-score	Support
+fair	0.8425	0.7901	0.8155	320,000
+medium	0.8801	0.9020	0.8909	320,000
+strong	0.8056	0.8779	0.8402	320,000
+weak	0.9149	0.8669	0.8903	320,000
+
+👉 Nhận xét:
+
+Medium có recall cao nhất (0.90) → dễ nhận diện, ít bỏ sót.
+
+Weak có precision rất cao (0.91) → khi dự đoán "weak" thì rất đáng tin cậy.
+
+Fair và Strong khá cân bằng nhưng vẫn hay nhầm lẫn lẫn nhau.
+
+📉 Confusion Matrix (Tóm tắt nhầm lẫn)
+
+Thực tế ↓ / Dự đoán → fair – medium – strong – weak
+
+[[252847    262  66468    423]
+ [  4998 288635   1003  25364]
+ [ 39026     33 280915     26]
+ [  3256  39020    305 277419]]
+
+
+👉 Điểm đáng chú ý:
+
+~66k mẫu fair bị nhầm thành strong.
+
+~39k mẫu weak bị nhầm thành medium.
+
+Medium được nhận diện chính xác cao nhất (288k/320k đúng).
+
+📈 Chỉ số chung (Overall Metrics)
+
+True Positive Rate (TPR / Recall): 85.92%
+
+False Positive Rate (FPR): 4.69%
+
+True Negative Rate (TNR / Specificity): 95.31%
+
+False Negative Rate (FNR): 14.08%
+
+👉 Nghĩa là:
+
+Mô hình nhận diện đúng gần 86% mẫu thực tế.
+
+Khả năng phân biệt rất tốt (TNR > 95%).
+
+Vẫn bỏ sót khoảng 14% mật khẩu.
+
+📌 Kết luận & Hướng cải thiện
+
+LSTM cho kết quả vượt trội hơn MLP (~70%) và SVM (~60%).
+
+Điểm mạnh: nhận diện tốt medium và weak, độ chính xác tổng thể cao.
+
+Điểm yếu: nhầm lẫn nhiều giữa cặp fair ↔ strong và weak ↔ medium.

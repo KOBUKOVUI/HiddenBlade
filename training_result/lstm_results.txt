@@ -1,0 +1,23 @@
+=== Confusion Matrix ===
+fair - medium - strong - weak
+[[252847    262  66468    423]
+ [  4998 288635   1003  25364]
+ [ 39026     33 280915     26]
+ [  3256  39020    305 277419]]
+
+=== Classification Report ===
+              precision    recall  f1-score   support
+
+        fair     0.8425    0.7901    0.8155    320000
+      medium     0.8801    0.9020    0.8909    320000
+      strong     0.8056    0.8779    0.8402    320000
+        weak     0.9149    0.8669    0.8903    320000
+
+    accuracy                         0.8592   1280000
+   macro avg     0.8608    0.8592    0.8592   1280000
+weighted avg     0.8608    0.8592    0.8592   1280000
+
+Accuracy: 0.8592
+
+=== Overall TPR, FPR, TNR, FNR ===
+TPR: 0.8592 | FPR: 0.0469 | TNR: 0.9531 | FNR: 0.1408
